@@ -16,21 +16,52 @@
 </head>
 <body class="antialiased bg-gray-50 text-gray-800">
   <header class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center space-x-4">
-        <img src="assets/logo.png" alt="KR Technology Logo" class="h-12 w-auto">
-        <div>
-          <h1 class="font-bold text-lg text-red-600">KR Technology</h1>
-          <p class="text-sm text-gray-500">Chittagong's trusted technology service provider</p>
-        </div>
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo and Text -->
+    <div class="flex items-center space-x-4">
+      <img src="assets/logo.png" alt="KR Technology Logo" class="h-12 w-auto">
+      <div>
+        <h1 class="font-bold text-lg text-red-600">KR Technology</h1>
+        <p class="text-sm text-gray-500 hidden sm:block">
+          Chittagong's trusted technology service provider
+        </p>
       </div>
-      <nav class="space-x-4 text-sm">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="services.html" class="hover:underline">সব সার্ভিস</a>
-        <a href="contact.html" class="hover:underline">যোগাযোগ</a>
-      </nav>
     </div>
-  </header>
+
+    <!-- Hamburger Button (visible on mobile) -->
+    <button id="menu-btn" class="block md:hidden focus:outline-none">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Navigation Links -->
+    <nav id="menu" class="hidden md:flex space-x-4 text-sm">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="services.html" class="hover:underline">সব সার্ভিস</a>
+      <a href="contact.html" class="hover:underline">যোগাযোগ</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu (collapsible) -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 text-sm">
+    <a href="index.html" class="block hover:underline">Home</a>
+    <a href="services.html" class="block hover:underline">সব সার্ভিস</a>
+    <a href="contact.html" class="block hover:underline">যোগাযোগ</a>
+  </div>
+</header>
+
+<!-- JS for mobile menu toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 
 <main class="container mx-auto px-6 py-10">
   <h2 class="text-4xl font-bold mb-6 text-blue-600">Our Blog Posts</h2>
